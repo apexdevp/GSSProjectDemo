@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Demo · Home</title>
+  <style>
+    :root {
+      --paper: #f7f4ee;
+      --ink: #1c2230;
+      --muted: #5e6675;
+      --accent: #d97706;
+      --line: #d9d3c7;
+      --code-bg: #12161f;
+      --code-fg: #e7e2d6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+    .eyebrow {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 44px; line-height: 1.1; margin: 0 0 16px; }
+    .lede { font-size: 19px; color: var(--muted); margin: 0 0 40px; }
+    nav {
+      display: flex;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 16px;
+      margin-bottom: 40px;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 14px;
+    }
+    nav a { color: var(--ink); text-decoration: none; }
+    nav a:hover, nav a:focus { color: var(--accent); text-decoration: underline; }
+    h2 { font-size: 24px; margin: 40px 0 12px; }
+    p { margin: 0 0 16px; }
+    pre {
+      background: var(--code-bg);
+      color: var(--code-fg);
+      padding: 18px 20px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    pre .c { color: #7f8aa3; } /* comment */
+    pre .k { color: var(--accent); } /* command */
+    footer {
+      margin-top: 56px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">Version Control Demo</p>
+    <h1>Hello, Git.</h1>
+    <p class="lede">A tiny two-page site you can use to practice the everyday Git workflow — commit, diff, branch, and merge.</p>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <h2>1 · Start tracking these files</h2>
+    <p>Put both HTML files in a folder, then turn it into a repository:</p>
+    <pre><span class="c"># initialise and make the first commit</span>
+<span class="k">git</span> init
+<span class="k">git</span> add index.html about.html
+<span class="k">git</span> commit -m "Add home and about pages"</pre>
+
+    <h2>2 · Make a change and see the diff</h2>
+    <p>Edit the headline above (try changing "Hello, Git." to your name), then:</p>
+    <pre><span class="k">git</span> status
+<span class="k">git</span> diff
+<span class="k">git</span> commit -am "Update homepage headline"</pre>
+
+    <h2>3 · Branch, then merge</h2>
+    <p>Try a change in isolation before bringing it back to main:</p>
+    <pre><span class="k">git</span> switch -c new-feature
+<span class="c"># ...edit a file, then commit...</span>
+<span class="k">git</span> switch main
+<span class="k">git</span> merge new-feature</pre>
+
+    <footer>git-demo · edit me, commit me, repeat</footer>
+  </div>
+</body>
+</html>
