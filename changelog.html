@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Demo · Changelog</title>
+  <style>
+    :root {
+      --paper: #f7f4ee;
+      --ink: #1c2230;
+      --muted: #5e6675;
+      --accent: #d97706;
+      --line: #d9d3c7;
+      --code-bg: #12161f;
+      --code-fg: #e7e2d6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+    .eyebrow {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 44px; line-height: 1.1; margin: 0 0 16px; }
+    .lede { font-size: 19px; color: var(--muted); margin: 0 0 40px; }
+    nav {
+      display: flex;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 16px;
+      margin-bottom: 40px;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 14px;
+    }
+    nav a { color: var(--ink); text-decoration: none; }
+    nav a:hover, nav a:focus { color: var(--accent); text-decoration: underline; }
+
+    .log { list-style: none; margin: 0; padding: 0; }
+    .log li {
+      position: relative;
+      padding: 0 0 28px 28px;
+      border-left: 2px solid var(--line);
+    }
+    .log li:last-child { border-left-color: transparent; }
+    .log li::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .hash {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 13px;
+      color: var(--accent);
+    }
+    .msg { font-weight: bold; display: block; margin: 2px 0 2px; }
+    .meta { font-size: 14px; color: var(--muted); }
+    footer {
+      margin-top: 56px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">Project History</p>
+    <h1>Changelog</h1>
+    <p class="lede">A hand-written history, laid out the way <span style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:0.9em;">git log</span> shows it — newest first.</p>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="changelog.html">Changelog</a>
+    </nav>
+
+    <ul class="log">
+      <li>
+        <span class="hash">a3f9c01</span>
+        <span class="msg">Add changelog page</span>
+        <span class="meta">A third file, a third commit. Replace this list with your own commits as you go.</span>
+      </li>
+      <li>
+        <span class="hash">7b2e8d4</span>
+        <span class="msg">Add about page</span>
+        <span class="meta">Introduced a second page and linked it in the nav.</span>
+      </li>
+      <li>
+        <span class="hash">1c0a55f</span>
+        <span class="msg">Add home and about pages</span>
+        <span class="meta">The initial commit — where the history begins.</span>
+      </li>
+    </ul>
+
+    <footer>git-demo · run `git log --oneline` and compare</footer>
+  </div>
+</body>
+</html>
